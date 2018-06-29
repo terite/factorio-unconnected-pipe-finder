@@ -1,0 +1,8 @@
+{
+	"name": "Unconnected Pipe Finder",
+	"version": "1.0.0",
+	"title": "Unconnected Pipe Finder",
+	"author": "terite",
+	"description": "Adds a hotkey to highlight unconnected pipe near the player.",
+	"factorio_version": "0.16"
+}
