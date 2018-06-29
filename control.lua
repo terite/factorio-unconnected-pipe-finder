@@ -12,8 +12,8 @@ end
 function hasAlerts(player, options)
   local alerts = player.get_alerts(options)
   for _,surface_alerts in pairs(alerts) do
-    for _, alerts in pairs(surface_alerts) do
-      for _, alert in pairs(alerts) do
+    for _, typed_alerts in pairs(surface_alerts) do
+      if next(typed_alerts) ~= nil then
         return true
       end
     end
@@ -173,7 +173,7 @@ script.on_nth_tick(300, function ()
 end)
 
 
-script.on_event("toggle-show-unconnected-pipe", function(event)
+script.on_event("toggle-show-unconnected-pipe", function()
   if global.enabled then
     global.enabled = false
     clearArrows()
