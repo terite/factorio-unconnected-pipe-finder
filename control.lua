@@ -174,12 +174,11 @@ end)
 
 
 script.on_event("toggle-show-unconnected-pipe", function()
-  if global.enabled then
-    global.enabled = false
+  global.enabled = not global.enabled
+  if not global.enabled then
     clearArrows()
     game.print{"unconnected-pipe-finder.disabled"}
   else
-    global.enabled = true
     local num_unconnected = createArrows()
     if num_unconnected == 0 then
       game.print{"unconnected-pipe-finder.found-none", num_unconnected}
